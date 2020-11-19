@@ -1,13 +1,50 @@
 .conteiner {
-    display: inline-block;
-    width: 100%;
+  display: inline-block;
+  width: 100%;
+  padding: calc(var(--section-padding) * 2) 0;
 }
 .conteiner > .row-short {
-    display: inline-block;
-    width: 600px;
+  display: inline-block;
+  width: 600px;
+  margin-left: calc(50% - 300px);
+  background-color: aquamarine;
 }
-}
+
 .conteiner > .row {
-    display: inline-block;
-    width: 1000px;
+  display: inline-block;
+  width: 1000px;
+  margin-left: calc(50% - 500px);
+  background-color: aqua;
+}
+
+.conteiner > .row > .column {
+  display: inline-block;
+  float: left;
+}
+.conteiner > .row > .column.left {
+  width: 50%;
+}
+.conteiner > .row > .column.right {
+  width: 40%;
+  margin-left: 10%;
+}
+@media (max-width: 1100px) {
+  .conteiner > .row {
+    width: 800px;
+    margin-left: calc(50% - 400px);
+  }
+}
+
+@media (max-width: 900px) {
+  .conteiner > .row {
+    width: 600px;
+    margin-left: calc(50% - 300px);
+  }
+}
+
+@media (max-width: 700px) {
+  .conteiner > .row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
