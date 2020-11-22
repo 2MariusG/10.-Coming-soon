@@ -6,15 +6,13 @@
 .conteiner > .row-short {
   display: inline-block;
   width: 600px;
-  margin-left: calc(50% - 300px);
-  margin-right: calc(50% - 300px);
+  margin: 0 calc(50% - 300px);
 }
 
 .conteiner > .row {
   display: inline-block;
   width: 1000px;
-  margin-left: calc(50% - 500px);
-  margin-right: calc(50% - 500px);
+  margin: 0 calc(50% - 500px);
 }
 
 .conteiner > .row > .column {
@@ -31,16 +29,14 @@
 @media (max-width: 1100px) {
   .conteiner > .row {
     width: 800px;
-    margin-left: calc(50% - 400px);
-    margin-right: calc(50% - 400px);
+    margin: 0 calc(50% - 400px);
   }
 }
 
 @media (max-width: 900px) {
   .conteiner > .row {
     width: 600px;
-    margin-left: calc(50% - 300px);
-    margin-right: calc(50% - 300px);
+    margin: 0 calc(50% - 300px);
   }
 }
 
@@ -62,8 +58,7 @@
   }
   .conteiner > .row > .column.right {
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     margin-top: calc(var(--section-padding) * 2);
   }
 }
