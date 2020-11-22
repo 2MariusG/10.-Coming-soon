@@ -6,15 +6,13 @@
 .conteiner > .row-short {
   display: inline-block;
   width: 600px;
-  margin-left: calc(50% - 300px);
-  background-color: aquamarine;
+  margin: 0 calc(50% - 300px);
 }
 
 .conteiner > .row {
   display: inline-block;
   width: 1000px;
-  margin-left: calc(50% - 500px);
-  background-color: aqua;
+  margin: 0 calc(50% - 500px);
 }
 
 .conteiner > .row > .column {
@@ -31,20 +29,36 @@
 @media (max-width: 1100px) {
   .conteiner > .row {
     width: 800px;
-    margin-left: calc(50% - 400px);
+    margin-left: 0 calc(50% - 400px);
   }
 }
 
 @media (max-width: 900px) {
   .conteiner > .row {
     width: 600px;
-    margin-left: calc(50% - 300px);
+    margin: 0 calc(50% - 300px);
   }
 }
 
 @media (max-width: 700px) {
-  .conteiner > .row {
+  .conteiner > {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .conteiner > .row-short {
+    width: 100%;
+    margin: 0;
+  }
+  .conteiner > .row {
+    width: 100%;
+    margin: 0;
+  }
+  .conteiner > .row > .column.legt {
+    width: 100%;
+  }
+  .conteiner > .row > .column.right {
+    width: 100%;
+    margin: 0;
+    margin-top: calc(var(--section-padding) * 2);
   }
 }
