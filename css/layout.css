@@ -19,6 +19,7 @@
 }
 .conteiner > .row > .column.left {
   width: 50%;
+  float: left;
 }
 .conteiner > .row > .column.right {
   width: 40%;
