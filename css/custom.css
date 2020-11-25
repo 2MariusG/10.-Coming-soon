@@ -1,11 +1,11 @@
 /* layout */
 .container.hero {
   padding-bottom: var(--section-padding);
-  /* background-image: url(../img/hero-image.jpg);
+  background-image: url(../img/hero-image1.jpg);
   background-size: cover;
   background-position: bottom center;
   background-attachment: fixed;
-  min-height: 100vh; */
+  min-height: 100vh;
 }
 footer.container {
   padding-top: 0;
