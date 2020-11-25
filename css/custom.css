@@ -40,8 +40,22 @@ footer.conteiner > .row-short {
   margin-bottom: calc(var(--hero-space) * 2);
 }
 .hero .form {
+  width: 90%;
   margin-bottom: var(--hero-space);
 }
+/* .hero .form > input {
+  width: 100%;
+  color: #fff;
+  background-color: transparent;
+  border-bottom-color: #fff;
+} */
+/* .hero .form > input::placeholder {
+  color: #fff;
+}
+.hero .form > .btn {
+float: none;
+} */
+
 /* main content */
 main h2 {
   display: inline-block;
@@ -64,4 +78,59 @@ main p > a {
   color: var(--secondary-color);
   text-decoration: none;
 }
+/* main .form > .btn {
+  float: right;
+} */
+
 /* footer */
+footer {
+  text-align: center;
+  line-height: 36px;
+  font-size: 17px;
+  color: #fffa;
+}
+
+footer > .row {
+  border-bottom: 1px solid #ffffff;
+}
+footer > .text-trio {
+  display: inline-block;
+  width: 100%;
+}
+footer .text-trio > .text {
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+}
+footer .text-trio > .text::before {
+  display: inline-block;
+  content: "";
+  width: 2.5px;
+  height: 14px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: -1.5px;
+  transform: translateY(-50%);
+}
+
+footer .text-trio > .text:first-of-type::before {
+  display: none;
+}
+footer p {
+  display: inline-block;
+  width: 100%;
+}
+footer a {
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  footer .text-trio > .text {
+    width: 100%;
+    padding: 0;
+  }
+
+  footer .text-trio > .text::before {
+    display: none;
+}
