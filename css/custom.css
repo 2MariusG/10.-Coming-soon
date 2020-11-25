@@ -1,12 +1,17 @@
 /* layout */
-.conteiner.hero {
+.container.hero {
   padding-bottom: var(--section-padding);
+  /* background-image: url(../img/hero-image.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-attachment: fixed;
+  min-height: 100vh; */
 }
-footer.conteiner {
+footer.container {
   padding-top: 0;
   padding-bottom: calc(var(--section-padding) * 1.5);
 }
-footer.conteiner > .row-short {
+footer.container > .row-short {
   margin-top: var(--section-padding);
 }
 .bg-main-color {
@@ -40,8 +45,22 @@ footer.conteiner > .row-short {
   margin-bottom: calc(var(--hero-space) * 2);
 }
 .hero .form {
+  width: 90%;
   margin-bottom: var(--hero-space);
 }
+/* .hero .form > input {
+  width: 100%;
+  color: #fff;
+  background-color: transparent;
+  border-bottom-color: #fff;
+} */
+/* .hero .form > input::placeholder {
+  color: #fff;
+}
+.hero .form > .btn {
+float: none;
+} */
+
 /* main content */
 main h2 {
   display: inline-block;
@@ -62,6 +81,83 @@ main p {
 
 main p > a {
   color: var(--secondary-color);
+  text-decoration-line: none;
+}
+/* main .form > .btn {
+  float: right;
+} */
+
+/* footer */
+footer {
+  text-align: center;
+  line-height: 34px;
+  font-size: 17px;
+  color: #fffa;
+}
+
+footer.container > .row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ffffff;
+}
+
+footer > .fa {
+  display: inline-block;
+  width: 40px;
+  padding: 10px;
+  line-height: 20px;
+  color: #fffa;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+footer > .fa:hover {
+  background-color: #fffa;
+  color: var(--main-color);
+}
+footer > .text-trio {
+  display: inline-block;
+  width: 100%;
+}
+footer .text-trio > .text {
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+}
+footer .text-trio > .text::before {
+  display: inline-block;
+  content: "";
+  width: 2.5px;
+  height: 14px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: -1.5px;
+  transform: translateY(-50%);
+}
+
+footer .text-trio > .text:first-of-type::before {
+  display: none;
+}
+footer p {
+  display: inline-block;
+  width: 100%;
+}
+footer a {
+  color: #fff;
   text-decoration: none;
 }
-/* footer */
+
+@media (max-width: 700px) {
+  footer .text-trio > .text {
+    width: 100%;
+    padding: 0;
+  }
+
+  footer .text-trio > .text::before {
+    display: none;
+  }
+}
