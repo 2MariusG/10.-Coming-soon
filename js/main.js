@@ -1,4 +1,7 @@
-// import {  } from './components/sum.js';
+import { renderSocials } from "./components/socials/renderSocials.js";
+import { socialsData } from "./data/socialsData.js";
+
+renderSocials(socialsData);
 
 
-// console.log (sum(pirmas, antras));
+
