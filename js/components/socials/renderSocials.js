@@ -1,11 +1,12 @@
-import { isInputValidation } from "./isInputValidation.js";
+import { isInputValid } from "./isInputValid.js";
 
 function renderSocials(data) {
     //  input validation
 
-    if (isInputValidation(data)){
+    if (!isInputValid(data)){
         return false;
     }
+    //kodas yra perkeltas i isInputValid
     // if (!Array.isArray(data)) {
     //     console.error('ERORR: social ikonoms generuoti reikia arraytipo ');
     //     return false;
@@ -14,10 +15,9 @@ function renderSocials(data) {
     //     console.error('ERORR: social ikonoms generuoti reikia ne tuscio arraytipo duomenu saraso');
     //     return false;
     // }
-    inputValidation(data);
-
+    
     // logic
-    const socialsDOM =document.querySelector('footer > .row');
+    const socialsDOM = document.querySelector('footer > .row');
     let HTML = '';
 
    for (let i = 0; i < data.length; i++) {

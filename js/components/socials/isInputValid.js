@@ -1,4 +1,4 @@
-function isInputValidation(data) {
+function isInputValid(data) {
     if (!Array.isArray(data)) {
         console.error('ERORR: social ikonoms generuoti reikia arraytipo ');
         return false;
@@ -10,4 +10,4 @@ function isInputValidation(data) {
     return true;
 }
 
-export { isInputValidation }
+export { isInputValid }
