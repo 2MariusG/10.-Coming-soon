@@ -1,52 +1,44 @@
 import { isInputValid } from "./isInputValid.js";
+import { isValidSocialItem } from './isValidSocialItem.js';
 
-function renderSocials(data) {
-    //  input validation
-
-    if (!isInputValid(data)){
+/**
+ * Social nuorodu generavimas is pateiktu duomenu i nurodyta vieta DOM'e.
+ * @param {string} selector Selectorius, kaip rasti norima vieta, kur bus istatomas sugeneruotas kodas
+ * @param {Array} data Duomenu masyvas su objektais, kurie reprezentuoja social nuorodas
+ * @returns {boolean} Logikos vykdymo metu radus klaida grazinas `false`, o funkcijai suveikus teisingai - `true`
+ */
+function renderSocials(selector, data) {
+    // input validation
+    if (!isInputValid(selector, data)) {
         return false;
     }
-    //kodas yra perkeltas i isInputValid
-    // if (!Array.isArray(data)) {
-    //     console.error('ERORR: social ikonoms generuoti reikia arraytipo ');
-    //     return false;
-    // }
-    // if (data.length === 0) {
-    //     console.error('ERORR: social ikonoms generuoti reikia ne tuscio arraytipo duomenu saraso');
-    //     return false;
-    // }
-    
+
     // logic
-    const socialsDOM = document.querySelector('footer > .row');
+    const socialsDOM = document.querySelector(selector);
+    if (!socialsDOM) {
+        console.error('ERROR: nerasta turinio generavimo vieta');
+        return false;
+    }
+
     let HTML = '';
 
-   for (let i = 0; i < data.length; i++) {
-       console.log("ciklas");
-        const item = data [i]; 
-        if (typeof item !== 'object') {
+    for (let i = 0; i < data.length; i++) {
+        const item = data[i];
+        if (!isValidSocialItem(item)) {
             continue;
         }
-        if (typeof item.link !== 'string' || 
-            item.link === '') {
-            continue;
-        }
-        if (typeof item.icon !== 'string' || 
-            item.icon === '') {
-            continue;
-        }
-
-        HTML += `<a href="${item.link}" target="_blank" class="fa fa-${item.icon}" aria-hidden="true"></a>`;
+        HTML += `<a href="${item.link}" target="_blank" class="social fa fa-${item.icon}" aria-hidden="true"></a>`;
     }
 
-// post logic validation
+    // post logic validation
     if (HTML === '') {
         console.error('ERROR: nepavyko sugeneruoti social ikonu/nuorodu.');
-        return false;
+        return false
     }
 
-// return
-socialsDOM.innerHTML = HTML;
-return true;
+    // return
+    socialsDOM.innerHTML += HTML;
+    return true;
 }
 
-export { renderSocials };
+export { renderSocials }
