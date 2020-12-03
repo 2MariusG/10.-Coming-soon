@@ -29,7 +29,6 @@ function renderSocials(selector, data) {
         }
         HTML += `<a href="${item.link}" target="_blank" class="social fa fa-${item.icon}" aria-hidden="true"></a>`;
     }
-
     // post logic validation
     if (HTML === '') {
         console.error('ERROR: nepavyko sugeneruoti social ikonu/nuorodu.');
